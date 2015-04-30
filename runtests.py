@@ -15,6 +15,9 @@ params = {
         'django.contrib.admin',
         'mobile_redirect',
     ],
+    'MIDDLEWARE_CLASSES': [
+        'mobile_redirect.middleware.MobileRedirectMiddleware',
+    ],
     'MOBILE_REDIRECT_URL': 'https://github.com/ryanbagwell/django-mobile-redirect',
     'DATABASES': {
         'default': {
@@ -30,7 +33,6 @@ params = {
         '--cover-package=mobile_redirect.tests',
         '--cover-xml',
         '--cover-xml-file=%s/coverage.xml' % results_base_dir,
-        '--verbosity=2',
         '--with-xunit',
         '--xunit-file=%s/nosetests.xml' % results_base_dir,
     ],

@@ -30,6 +30,8 @@ class MobileRedirectMiddleware(object):
                 'netfront',
                 'android',
                 'blackberry',
+                'WordPress App',
+                'wp-iphone',
             ]
 
             pattern = "(%s)" % '|'.join(patterns)
