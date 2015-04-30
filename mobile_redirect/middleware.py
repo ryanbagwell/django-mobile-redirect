@@ -15,14 +15,13 @@ class MobileRedirectMiddleware(object):
 
             patterns = [
                 'up.browser',
-                '|up.link',
+                'up.link',
                 'mmp',
                 'symbian',
                 'smartphone',
                 'midp',
                 'wap',
                 'phone',
-                'windows ce',
                 'pda',
                 'mobile',
                 'mini',
