@@ -12,6 +12,8 @@ class MobileRedirectTests(TestCase):
     def setUpClass(self):
         super(MobileRedirectTests, self).setUpClass()
 
+
+
         try:
             r = requests.get('http://browscap.org/stream?q=BrowsCapXML')
             tree = ET.fromstring(r.content)
@@ -36,7 +38,10 @@ class MobileRedirectTests(TestCase):
 
         self.desktop_devices = tree.findall("browsercapitems/browscapitem/item[@name='Device_Type'][@value='Desktop']/..")
 
+
     def test_mobile_phone_redirects(self):
+
+        count = 1
 
         for device in self.mobile_phones:
 
@@ -50,9 +55,15 @@ class MobileRedirectTests(TestCase):
                                  settings.MOBILE_REDIRECT_URL,
                                  status_code=301,
                                  target_status_code=301,
-                                 msg_prefix="Didn't correctly redirect for %s" % ua_string)
+                                 msg_prefix="Didn't correctly redirect for %s (test %s of %s)" % (ua_string, count, len(self.mobile_phones)))
+
+            count = count + 1
+
+
 
     def test_mobile_device_redirects(self):
+
+        count = 1
 
         for device in self.mobile_devices:
 
@@ -66,9 +77,13 @@ class MobileRedirectTests(TestCase):
                                  settings.MOBILE_REDIRECT_URL,
                                  status_code=301,
                                  target_status_code=301,
-                                 msg_prefix="Didn't correctly redirect for %s" % ua_string)
+                                 msg_prefix="Didn't correctly redirect for %s (test %s of %s)" % (ua_string, count, len(self.mobile_devices)))
+
+            count = count + 1
 
     def test_tablet_redirects(self):
+
+        count = 1
 
         for device in self.tablet_devices:
 
@@ -82,9 +97,13 @@ class MobileRedirectTests(TestCase):
                                  settings.MOBILE_REDIRECT_URL,
                                  status_code=301,
                                  target_status_code=301,
-                                 msg_prefix="Didn't correctly redirect for %s" % ua_string)
+                                 msg_prefix="Didn't correctly redirect for %s (test %s of %s)" % (ua_string, count, len(self.tablet_devices)))
+
+            count = count + 1
 
     def test_desktop_devices_do_not_redirect(self):
+
+        count = 1
 
         for device in self.desktop_devices:
 
@@ -95,4 +114,6 @@ class MobileRedirectTests(TestCase):
             response = c.get('/')
 
             self.assertEqual(response.status_code, 200,
-                             msg="Unexected status code (%s) for Desktop device %s" % (response.status_code, ua_string))
+                             msg="Unexected status code (%s) for Desktop device %s (test %s of %s)" % (response.status_code, ua_string, count, len(self.desktop_devices)))
+
+            count = count + 1
