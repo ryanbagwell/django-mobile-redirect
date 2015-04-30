@@ -86,7 +86,7 @@ class MobileRedirectTests(TestCase):
 
     def test_desktop_devices_do_not_redirect(self):
 
-        for ua_string in self.desktop_devices:
+        for device in self.desktop_devices:
 
             ua_string = device.attrib.get('name')
 
