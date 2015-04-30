@@ -15,7 +15,7 @@ params = {
         'django.contrib.admin',
         'mobile_redirect',
     ],
-    'MOBILE_REDIRECT_URL': 'http://www.bozzuto.com/apartments/communities/64-mariner-bay-at-annapolis-towne-centre',
+    'MOBILE_REDIRECT_URL': 'https://github.com/ryanbagwell/django-mobile-redirect',
     'DATABASES': {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -27,13 +27,14 @@ params = {
     },
     'NOSE_ARGS': [
         '--with-coverage',
-        '--cover-package=spark101.apps.account.tests,spark101.apps.videos.tests,spark101.apps.portal.tests',
+        '--cover-package=mobile_redirect.tests',
         '--cover-xml',
         '--cover-xml-file=%s/coverage.xml' % results_base_dir,
         '--verbosity=2',
         '--with-xunit',
         '--xunit-file=%s/nosetests.xml' % results_base_dir,
-    ]
+    ],
+    'ROOT_URLCONF': 'mobile_redirect.tests.urls',
 }
 
 settings.configure(**params)
