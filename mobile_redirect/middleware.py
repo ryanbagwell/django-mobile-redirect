@@ -37,7 +37,9 @@ class MobileRedirectMiddleware(object):
                 'Facebook App 29.0',
                 'iOS dataaccessd',
                 'ipad',
-                ' iOS',
+                'iOS',
+                'Flipboard App 3.1',
+                'UCWEB/*\(\*GT-P3100\*\)',
             ]
 
             pattern = "(%s)" % '|'.join(patterns)
