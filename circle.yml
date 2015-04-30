@@ -1,0 +1,13 @@
+machine:
+  timezone:
+    America/New_York
+
+dependencies:
+  pre:
+    - python setup.py install
+
+test:
+  pre:
+    - pip install django-nose nose bumpversion psycopg2 coverage
+  override:
+    - python ./runtests.py
