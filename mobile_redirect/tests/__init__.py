@@ -10,6 +10,7 @@ class MobileRedirectTests(TestCase):
 
     @classmethod
     def setUpClass(self):
+        super(MobileRedirectTests, self).setUpClass()
 
         try:
             r = requests.get('http://browscap.org/stream?q=BrowsCapXML')
@@ -86,6 +87,8 @@ class MobileRedirectTests(TestCase):
     def test_desktop_devices_do_not_redirect(self):
 
         for ua_string in self.desktop_devices:
+
+            ua_string = device.attrib.get('name')
 
             c = Client(HTTP_USER_AGENT=ua_string)
 
