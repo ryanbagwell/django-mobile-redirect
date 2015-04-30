@@ -35,8 +35,10 @@ class MobileRedirectMiddleware(object):
                 'pluckItCrawler',
                 'tablet',
                 'SAMSUNG-SGH-i900',
-                'Facebook App 29.0 for iOS',
+                'Facebook App 29.0',
                 'iOS dataaccessd',
+                'ipad',
+                ' iOS',
             ]
 
             pattern = "(%s)" % '|'.join(patterns)
