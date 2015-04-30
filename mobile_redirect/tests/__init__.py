@@ -95,4 +95,4 @@ class MobileRedirectTests(TestCase):
             response = c.get('/')
 
             self.assertEqual(response.status_code, 200,
-                             msg_prefix="Unexected status code (%s) for Desktop device %s" % (response.status_code, ua_string))
+                             msg="Unexected status code (%s) for Desktop device %s" % (response.status_code, ua_string))
