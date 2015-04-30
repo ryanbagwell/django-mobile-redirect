@@ -35,10 +35,10 @@ class MobileRedirectMiddleware(object):
                 'tablet',
                 'SAMSUNG-SGH-i900',
                 'Facebook App 29.0',
-                'iOS dataaccessd',
                 'ipad',
                 'iOS',
-                'Flipboard App 3.1',
+                '^Flipboard App .*$',
+                'Flixster App .*$',
                 'UCWEB/*\(\*GT-P3100\*\)',
             ]
 
