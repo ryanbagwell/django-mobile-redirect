@@ -7,7 +7,8 @@ class MobileRedirectMiddleware(object):
     """ Adobted from https://djangosnippets.org/snippets/2001/ """
 
     def process_request(self, request):
-        is_mobile = False
+
+        request.is_mobile = False
 
         if 'HTTP_USER_AGENT' in request.META:
             user_agent = request.META['HTTP_USER_AGENT']
@@ -38,9 +39,7 @@ class MobileRedirectMiddleware(object):
             match = prog.search(user_agent)
 
             if match:
-                is_mobile = True
-
-        request.is_mobile = is_mobile
+                request.is_mobile = True
 
     def process_response(self, request, response):
 
