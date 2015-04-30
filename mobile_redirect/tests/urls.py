@@ -8,7 +8,7 @@ admin.autodiscover()
 
 
 
-def test_view():
+def test_view(request):
     return HttpResponse("You shouldn't see this if it's a mobile device.")
 
 urlpatterns = patterns('',
