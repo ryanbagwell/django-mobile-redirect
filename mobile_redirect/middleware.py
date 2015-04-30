@@ -31,7 +31,6 @@ class MobileRedirectMiddleware(object):
                 'blackberry',
                 'WordPress App',
                 'wp-iphone',
-                'flipboard App',
                 'pluckItCrawler',
                 'tablet',
                 'SAMSUNG-SGH-i900',
