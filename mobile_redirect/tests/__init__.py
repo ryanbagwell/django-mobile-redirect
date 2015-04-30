@@ -17,7 +17,7 @@ class MobileRedirectTests(TestCase):
             tree = ET.fromstring(r.content)
         except Exception:
             print "Encountered exception when trying to download latest user agent strings. Using local data file instead."
-            path = os.path.join(os.path.dirname(__file__), 'testdata', 'browscap.xml')
+            path = os.path.join(os.path.dirname(__file__), 'browscap.xml')
             tree = ET.parse(path)
 
         print "Compiling list of mobile phone user agent strings ..."
