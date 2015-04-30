@@ -14,7 +14,7 @@ Install with pip::
 
     pip install ...
 
-Add the following to Django settings:
+Add the following to Django settings::
 
     MIDDLEWARE_CLASSES = [
       'mobile_redirect.middleware.MobileRedirectMiddleware',
