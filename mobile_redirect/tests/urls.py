@@ -1,10 +1,16 @@
 from django.conf import settings
 from django.conf.urls import patterns, include, url
+from django.http import HttpResponse
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
+
+
+def test_view():
+    return HttpResponse("You shouldn't see this if it's a mobile device.")
+
 urlpatterns = patterns('',
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^', test_view),
 )
