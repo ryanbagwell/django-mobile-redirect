@@ -12,7 +12,7 @@ Installation and Configuration
 
 Install with pip::
 
-    pip install ...
+    pip install django-mobile-redirect
 
 Add the following to Django settings::
 
