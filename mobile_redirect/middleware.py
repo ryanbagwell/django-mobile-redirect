@@ -34,13 +34,17 @@ class MobileRedirectMiddleware(object):
                 'pluckItCrawler',
                 'tablet',
                 'SAMSUNG-SGH-i900',
-                'Facebook App 29.0',
+                'Facebook App .*',
                 'ipad',
                 'iOS',
                 '^Flipboard App .*$',
                 'Flixster App .*$',
+                'Flixster App',
                 'GT-P3100',
-                '!NBPC724',
+                'Puffin/3.7',
+                'FBAV/.*',
+                'Silk/.*',
+                'Windows CE',
             ]
 
             pattern = "(%s)" % '|'.join(patterns)
@@ -54,8 +58,7 @@ class MobileRedirectMiddleware(object):
 
     def process_response(self, request, response):
 
-        if request.is_mobile:
-
+        if getattr(request, 'is_mobile', False):
             return HttpResponsePermanentRedirect(settings.MOBILE_REDIRECT_URL)
         else:
 
