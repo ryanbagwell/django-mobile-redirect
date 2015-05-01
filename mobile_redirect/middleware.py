@@ -45,6 +45,11 @@ class MobileRedirectMiddleware(object):
                 'FBAV/.*',
                 'Silk/.*',
                 'Windows CE',
+                'SymbOS\*Opera Mobi',
+                'HTC',
+                'TBD.*',
+                'TERRA_101',
+                'DINO.*',
             ]
 
             pattern = "(%s)" % '|'.join(patterns)
